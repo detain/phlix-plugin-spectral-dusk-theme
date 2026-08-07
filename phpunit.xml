@@ -12,7 +12,7 @@
          failOnWarning="true">
     <testsuites>
         <testsuite name="Unit">
-            <directory>tests/phpunit/unit</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
