@@ -20,7 +20,7 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
 
     public function themeSourceName(): string
     {
-        return 'spectral-dusk';
+        return self::SOURCE_NAME;
     }
 
     /**
