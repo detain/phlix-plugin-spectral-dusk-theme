@@ -39,9 +39,9 @@ if (!$autoloaderFound) {
 
 // Load dev stubs if the real interfaces are not available
 if (!interface_exists(\Phlix\Shared\Plugin\LifecycleInterface::class)) {
-    require_once __DIR__ . '/../../dev-stubs/LifecycleInterface.php';
+    require_once __DIR__ . '/../dev-stubs/LifecycleInterface.php';
 }
 
 if (!interface_exists(\Phlix\Theming\ThemeSourceInterface::class)) {
-    require_once __DIR__ . '/../../dev-stubs/ThemeSourceInterface.php';
+    require_once __DIR__ . '/../dev-stubs/ThemeSourceInterface.php';
 }
