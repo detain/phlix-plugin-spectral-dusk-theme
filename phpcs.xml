@@ -1,39 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
-    <description>Coding standard for Spectral Dusk Theme plugin</description>
-
-    <arg name="tab-width" value="4"/>
-    <arg name="encoding" value="UTF-8"/>
-    <arg name="show_warnings" value="1"/>
-    <arg name="show_sniffs" value="1"/>
-    <arg name="warnings" value="1"/>
-
+<ruleset name="Phlix Theme Plugin">
+    <description>PSR-12 coding standard</description>
     <file>src</file>
+    <file>tests</file>
     <file>dev-stubs</file>
-
-    <exclude-pattern>*/vendor/*</exclude-pattern>
-
-    <!-- PSR-12 Extended Coding Style -->
+    <exclude-pattern>vendor/</exclude-pattern>
     <rule ref="PSR12"/>
-
-    <!-- Additional rules -->
-    <rule ref="Squiz.Arrays.ArrayDeclaration">
-        <properties>
-            <property name="setFirstComma" value="true"/>
-        </properties>
-    </rule>
-
-    <rule ref="Squiz.Functions.FunctionDeclaration"/>
-    <rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
-
-    <!-- Disallow short array syntax in some contexts -->
-    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-
-    <!-- Ensure strict types declaration -->
-    <rule ref="Squiz.PHP.DiscouragedFunctions">
-        <properties>
-            <property name="error" value="true"/>
-        </properties>
-    </rule>
 </ruleset>
