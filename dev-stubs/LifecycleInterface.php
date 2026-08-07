@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Phlix\Shared\Plugin;
 
+use Psr\Container\ContainerInterface;
+
 /**
  * Stub of LifecycleInterface for development-time type checking.
  *
@@ -16,7 +18,7 @@ interface LifecycleInterface
     /**
      * Called when the plugin is enabled.
      */
-    public function onEnable(): void;
+    public function onEnable(ContainerInterface $container): void;
 
     /**
      * Called when the plugin is disabled.

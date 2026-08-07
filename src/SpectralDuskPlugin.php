@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Phlix\SpectralDusk;
 
 use Phlix\Shared\Plugin\LifecycleInterface;
+use Phlix\Theming\ThemeSourceInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Spectral Dusk UI theme plugin for Phlix.
@@ -16,8 +18,13 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
 {
     public const SOURCE_NAME = 'spectral-dusk';
 
+    public function themeSourceName(): string
+    {
+        return 'spectral-dusk';
+    }
+
     /**
-     * @return array<string, array{
+     * @return array<int, array{
      *     id: string,
      *     name: string,
      *     dark: bool,
@@ -28,7 +35,7 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
     public function providedThemes(): array
     {
         return [
-            'spectral-dusk' => [
+            [
                 'id'      => 'spectral-dusk',
                 'name'    => 'Spectral Dusk',
                 'dark'    => true,
@@ -67,7 +74,7 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
         ];
     }
 
-    public function onEnable(): void
+    public function onEnable(ContainerInterface $container): void
     {
         // No-op: theme registration is declarative via ThemeSourceInterface
     }
