@@ -14,6 +14,11 @@ namespace Phlix\Theming;
 interface ThemeSourceInterface
 {
     /**
+     * Return the unique source name for this theme provider.
+     */
+    public function themeSourceName(): string;
+
+    /**
      * Returns a map of theme-id => theme-descriptor for all themes provided
      * by this plugin.
      *
