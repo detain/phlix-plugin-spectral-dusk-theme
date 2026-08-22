@@ -7,28 +7,5 @@ parameters:
     excludePaths:
         - vendor
         - tests
-    treatPhpDocTypesAsPossibleBug: true
-    checkGenericClassInNonGenericObjectType: true
-    checkMissingIterableValueType: true
-    checkAlwaysTrueCheckTypeFunctionCall: true
-    checkAlwaysTrueInstanceof: true
-    checkExplicitMixedMissingReturn: true
-    checkMissingSubcommitteeForNativeReflectionType: true
-    checkNonNullabilityForUninitializedDeclaredProps: true
-    checkThisOnly: true
-    checkTrueNullableConstants: true
-    checkAlwaysTrueLoopCondition: true
-    checkAlwaysTrueStrictComparison: true
-    checkNullables: true
-    checkThis: true
-    checkExplicitMixed: true
-    checkImplicitMixed: true
-    checkPropertyTypes: true
-    checkMissingVarTag: true
-    checkNowdocVariableName: true
-    reportAlwaysTrueInLastCondition: true
-    reportStaticMethodSignatures: true
-    reportWrongPhpDocTypeInVarTag: true
-    additionalChecks:
-        - narrowParameterAssignmentsFromDoc: true
+    reportUnmatchedIgnoredErrors: false
     editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'

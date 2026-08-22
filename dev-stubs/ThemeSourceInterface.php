@@ -22,7 +22,7 @@ interface ThemeSourceInterface
      * Returns a map of theme-id => theme-descriptor for all themes provided
      * by this plugin.
      *
-     * @return array<string, array{
+     * @return array<int, array{
      *     id: string,
      *     name: string,
      *     dark: bool,

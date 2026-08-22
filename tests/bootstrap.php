@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * Bootstrap file for PHPUnit tests.
  *
  * Loads the autoloader and provides stub interfaces when the real
  * Phlix interfaces are not available via Composer.
  */
+
+declare(strict_types=1);
 
 $autoloadPaths = [
     __DIR__ . '/../../vendor/autoload.php',
