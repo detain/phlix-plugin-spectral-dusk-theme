@@ -57,28 +57,35 @@ A bioluminescent teal-cyan UI theme for Phlix with deep purple undertones, evoki
 
 ## Installation
 
-```json
-"require": {
-    "detain/phlix-plugin-spectral-dusk-theme": "^1.0.0"
-}
+The theme ships as a Phlix plugin. The server installs plugins from its
+**catalog** (`plugins.json`): each entry pins an exact commit (`ref`) and the
+sha256 of that commit's tarball (`artifactSha256`), and the server verifies
+those bytes before extracting anything. An un-pinned source is refused
+outright — a deliberate default-deny, not a bug to work around. There is no
+supported route that installs this plugin by adding it to the server's
+`composer.json`.
+
+**Admin UI** — *Admin → Plugins* (`/app/admin/plugins`), find **Spectral Dusk
+Theme**, press **Install**, then flip its switch to enable it.
+
+**CLI** — the same thing, from the server root. Pass the repository URL, not
+the plugin name:
+
+```bash
+php bin/phlix plugin:install https://github.com/detain/phlix-plugin-spectral-dusk-theme
+php bin/phlix plugin:enable  phlix-plugin-spectral-dusk-theme
 ```
 
 ## Usage
 
-Enable the theme in your Phlix configuration:
+Install and enable are separate steps: a fresh install lands **disabled**,
+and enabling is a database flag flipped by `PluginLoader::enable()` — there is
+no per-plugin `enabled` key in any server config file. If installing changed
+nothing, the plugin was installed but never enabled.
 
-```json
-{
-    "plugins": {
-        "phlix-plugin-spectral-dusk-theme": {
-            "enabled": true
-        }
-    },
-    "theme": {
-        "id": "spectral-dusk"
-    }
-}
-```
+Theme choice is **per user**: open *Settings → Appearance* and pick **Spectral
+Dusk**. The selection is stored in `user_profiles.active_theme_id` and applies
+to your account only; there is no global theme config key.
 
 ## Development
 
