@@ -55,7 +55,7 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
                     '--surface-glass-strong' => 'rgba(6, 3, 10, 0.85)',
                     '--text'              => '#e8e0f0',
                     '--text-muted'        => '#a89bb8',
-                    '--text-subtle'       => '#7a6b8a',
+                    '--text-subtle'       => '#8d7ea4',
                     '--text-faint'        => '#4a3d5c',
                     '--text-on-accent'    => '#06030a',
                     '--border'            => '#1e1528',

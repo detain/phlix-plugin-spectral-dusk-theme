@@ -37,7 +37,7 @@ A bioluminescent teal-cyan UI theme for Phlix with deep purple undertones, evoki
 |-------|-------|-------|
 | `--text` | `#e8e0f0` | Primary text (lavender white) |
 | `--text-muted` | `#a89bb8` | Muted text |
-| `--text-subtle` | `#7a6b8a` | Subtle/hint text |
+| `--text-subtle` | `#8d7ea4` | Subtle/hint text — placeholders/labels (AA on all surfaces) |
 | `--text-faint` | `#4a3d5c` | Faintest text |
 | `--text-on-accent` | `#06030a` | Text on accent color |
 
