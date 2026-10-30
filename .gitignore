@@ -17,6 +17,7 @@ composer.lock
 .phpunit.cache/
 coverage/
 /coverage-html/
+/coverage.xml
 
 # Static Analysis
 .phpstan.cache/
