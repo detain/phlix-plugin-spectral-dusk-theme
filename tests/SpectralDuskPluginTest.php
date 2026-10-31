@@ -89,4 +89,13 @@ final class SpectralDuskPluginTest extends TestCase
         $this->plugin->onDisable();
         $this->assertTrue(true, 'onDisable should complete without errors');
     }
+
+    #[Test]
+    public function testSubscribedEventsReturnsEmptyArray(): void
+    {
+        // Family-standard contract assertion (jade/mystic/sample shape): a
+        // theme plugin subscribes to no events; the host contract keys the
+        // map by event FQCN, and an empty array is the valid empty map.
+        $this->assertSame([], $this->plugin->subscribedEvents());
+    }
 }
