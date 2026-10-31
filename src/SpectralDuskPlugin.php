@@ -12,7 +12,7 @@ use Psr\Container\ContainerInterface;
  * Spectral Dusk UI theme plugin for Phlix.
  *
  * A bioluminescent teal-cyan aesthetic with deep purple undertones,
- * evoking the magical atmosphere of twilight in a mystical forest.
+ * evoking the luminous hush of deep twilight.
  */
 final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterface
 {
