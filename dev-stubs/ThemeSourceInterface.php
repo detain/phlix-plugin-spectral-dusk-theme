@@ -1,34 +1,45 @@
 <?php
 
+/**
+ * Dev-only stub of the host server's theme-source contract.
+ *
+ * @copyright 2026 Joe Huss <detain@interserver.net>
+ * @license   MIT
+ */
+
 declare(strict_types=1);
 
 namespace Phlix\Theming;
 
 /**
- * Stub of ThemeSourceInterface for development-time type checking.
+ * Dev-only stub of `Phlix\Theming\ThemeSourceInterface`.
  *
- * This interface is declared by the Phlix server host and is not available
- * via Composer. It is loaded by tests/bootstrap.php when the real interface
- * is absent from the autoloader.
+ * Unlike `LifecycleInterface`, this contract does **not** live in
+ * `detain/phlix-shared` — it is declared by the host server at
+ * `src/Theming/ThemeSourceInterface.php` and is on the classpath only inside a
+ * running Phlix server. Composer therefore cannot supply it, so the plugin's
+ * own suite and its PHPStan run need this minimal, byte-compatible copy.
+ *
+ * `tests/bootstrap.php` loads it only when the real interface is absent, and
+ * `phpstan.neon` picks it up through `scanDirectories` (which INTRODUCES a
+ * symbol; `stubFiles` would only override one PHPStan can already resolve, and
+ * is silently useless for a symbol it cannot find at all).
+ *
+ * Keep in sync with the host definition if that contract ever changes.
+ *
+ * @internal Tests/analysis only — never autoloaded into production.
  */
 interface ThemeSourceInterface
 {
     /**
-     * Return the unique source name for this theme provider.
+     * The canonical, stable name of this theme source.
      */
     public function themeSourceName(): string;
 
     /**
-     * Returns a map of theme-id => theme-descriptor for all themes provided
-     * by this plugin.
+     * The raw theme payloads this source contributes.
      *
-     * @return array<int, array{
-     *     id: string,
-     *     name: string,
-     *     dark: bool,
-     *     extends: string,
-     *     tokens: array<string, string>
-     * }>
+     * @return list<array<array-key, mixed>>
      */
     public function providedThemes(): array;
 }

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Dev-only stub of the host server's lifecycle contract.
+ *
+ * @copyright 2026 Joe Huss <detain@interserver.net>
+ * @license   MIT
+ */
+
 declare(strict_types=1);
 
 namespace Phlix\Shared\Plugin;
@@ -7,28 +14,27 @@ namespace Phlix\Shared\Plugin;
 use Psr\Container\ContainerInterface;
 
 /**
- * Stub of LifecycleInterface for development-time type checking.
+ * Dev-only stub of `Phlix\Shared\Plugin\LifecycleInterface`.
  *
- * This interface is declared by the Phlix server host and is not available
- * via Composer in all environments. It is loaded by tests/bootstrap.php
- * when the real interface is absent from the autoloader.
+ * The canonical definition ships in `detain/phlix-shared`
+ * (`src/Plugin/LifecycleInterface.php`) and is resolved by the host
+ * application's autoloader in an installed plugin. This copy exists only for
+ * the case where the plugin is checked out and analysed without that package
+ * present; `tests/bootstrap.php` loads it only when the real interface is
+ * absent.
+ *
+ * @internal Tests/analysis only — never autoloaded into production.
  */
 interface LifecycleInterface
 {
-    /**
-     * Called when the plugin is enabled.
-     */
     public function onEnable(ContainerInterface $container): void;
 
-    /**
-     * Called when the plugin is disabled.
-     */
     public function onDisable(): void;
 
     /**
-     * Returns the list of event listener tags this plugin subscribes to.
-     *
-     * @return class-string[]
+     * @return array<class-string, string|callable> Keys are event FQCNs;
+     *   values are listener method names or callables (host contract:
+     *   phlix-shared src/Plugin/LifecycleInterface.php).
      */
     public function subscribedEvents(): array;
 }

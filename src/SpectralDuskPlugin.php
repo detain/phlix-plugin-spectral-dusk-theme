@@ -24,13 +24,9 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
     }
 
     /**
-     * @return array<int, array{
-     *     id: string,
-     *     name: string,
-     *     dark: bool,
-     *     extends: string,
-     *     tokens: array<string, string>
-     * }>
+     * @inheritDoc
+     *
+     * @return list<array<array-key, mixed>>
      */
     public function providedThemes(): array
     {
@@ -85,7 +81,9 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
     }
 
     /**
-     * @return class-string[]
+     * A theme plugin subscribes to no events.
+     *
+     * @return array<class-string, string|callable> Always empty.
      */
     public function subscribedEvents(): array
     {

@@ -1,11 +1,10 @@
 {
     "name": "detain/phlix-plugin-spectral-dusk-theme",
-    "description": "Spectral Dusk UI theme for Phlix — a bioluminescent teal-cyan aesthetic",
     "type": "phlix-plugin",
+    "description": "Spectral Dusk UI theme for Phlix — a bioluminescent teal-cyan aesthetic",
     "license": "MIT",
+    "keywords": ["phlix", "phlix-plugin", "phlix-theme", "ui-theme", "theme", "spectral-dusk", "spectral-dusk-theme", "teal", "cyan", "dark-theme"],
     "homepage": "https://github.com/detain/phlix-plugin-spectral-dusk-theme",
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "require": {
         "php": ">=8.3",
         "detain/phlix-shared": "^0.21",
@@ -16,10 +15,22 @@
         "phpunit/phpunit": "^10.0",
         "squizlabs/php_codesniffer": "^4.0"
     },
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/detain/phlix-shared.git" }
+    ],
     "autoload": {
         "psr-4": {
             "Phlix\\SpectralDusk\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Phlix\\SpectralDusk\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
     },
     "scripts": {
         "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
