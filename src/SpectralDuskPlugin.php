@@ -40,6 +40,18 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
                     '--accent'            => '#00e5cc',
                     '--accent-hover'      => '#33ffe8',
                     '--accent-active'     => '#00b8a3',
+                    // KNOWN LIMITATION (owner-gated values; do not silently
+                    // re-tune here — W-min157 ask-quote). Measured at this tip
+                    // via WCAG relative luminance: the .45 ring composites to
+                    // #036961 = 3.12:1 on --bg — the estate's thinnest honest
+                    // pass (midnight's .60 ring composites to 4.04:1 on its
+                    // own bg) — and only 2.68:1 against --border, so the
+                    // normal→focus transition barely shifts; the .12 soft halo
+                    // is 1.18:1 (effectively invisible; midnight uses .16).
+                    // The review's lift — ring to ~.55–.60 (4.19–4.87:1),
+                    // soft to ~.16 — fits the budget (teal as pure fill is
+                    // 12.76:1), but token VALUES are owner-watermark.
+                    // [review webux m1]
                     '--accent-soft'       => 'rgba(0, 229, 204, 0.12)',
                     '--accent-ring'       => 'rgba(0, 229, 204, 0.45)',
                     '--accent-text'       => '#00ffe5',
@@ -52,6 +64,19 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
                     '--text'              => '#e8e0f0',
                     '--text-muted'        => '#a89bb8',
                     '--text-subtle'       => '#8d7ea4',
+                    // KNOWN LIMITATION (owner-gated value; do not silently
+                    // re-tune here — W-min157 ask-quote). The faintest ramp
+                    // rung reproduces the family tell at 1.99–2.06:1:
+                    // measured 2.06 on --bg, 1.99 on --surface, 1.90/1.76 on
+                    // --surface-2/-3, 2.01 on the color-mix'd input ground
+                    // phlix-ui paints ::placeholder with (AuthField.vue),
+                    // plus the login/signup footnote rows — all far below
+                    // the 4.5:1 body floor and under even WCAG 3:1. Root
+                    // cause is estate-side (every built-in's faint sits
+                    // ~2:1 and the UI loads this rung with hint copy), but
+                    // the theme owns the value: a lift to ≥3:1 (~#6a5b7d
+                    // mauve-consistent) is parked for the owner's family
+                    // decision. [review webux m2]
                     '--text-faint'        => '#4a3d5c',
                     '--text-on-accent'    => '#06030a',
                     '--border'            => '#1e1528',
