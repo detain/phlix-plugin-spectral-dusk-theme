@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Phlix Spectral Dusk theme plugin: a twilight ui-theme provider.
+ * Phlix Spectral Dusk theme plugin: a twilight theme provider.
  *
  * @copyright 2026 Joe Huss <detain@interserver.net>
  * @license   MIT

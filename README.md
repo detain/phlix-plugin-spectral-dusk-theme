@@ -1,6 +1,6 @@
 # Spectral Dusk Theme
 
-A bioluminescent teal-cyan UI theme for Phlix with deep purple undertones, evoking the luminous hush of deep twilight.
+A bioluminescent teal-cyan UI theme for Phlix with deep purple undertones.
 
 ## Theme Details
 
