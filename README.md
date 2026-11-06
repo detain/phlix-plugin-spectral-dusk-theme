@@ -19,7 +19,7 @@ A bioluminescent teal-cyan UI theme for Phlix with deep purple undertones, evoki
 | `--accent-active` | `#00b8a3` | Active/pressed state |
 | `--accent-soft` | `rgba(0, 229, 204, 0.12)` | Soft accent for backgrounds |
 | `--accent-ring` | `rgba(0, 229, 204, 0.45)` | Focus rings and outlines |
-| `--accent-text` | `#00ffe5` | The accent colour AS foreground text/icon — AA (≥4.5:1) on bg/surface (not the general text role; that is `--text`) |
+| `--accent-text` | `#00ffe5` | The accent color as foreground text/icon — AA (≥4.5:1) on bg/surface (not the general text role; that is `--text`) |
 
 ### Backgrounds & Surfaces
 | Token | Value | Usage |
@@ -37,7 +37,7 @@ A bioluminescent teal-cyan UI theme for Phlix with deep purple undertones, evoki
 | `--text` | `#e8e0f0` | Primary text (lavender white) |
 | `--text-muted` | `#a89bb8` | Muted text |
 | `--text-subtle` | `#8d7ea4` | Subtle/hint text — placeholders/labels (AA on all surfaces) |
-| `--text-faint` | `#4a3d5c` | Faintest text |
+| `--text-faint` | `#4a3d5c` | Faintest text (below AA — owner-parked; see src docblock) |
 | `--text-on-accent` | `#06030a` | Text on accent color |
 
 ### Borders
@@ -61,7 +61,8 @@ Five of the tokens above are deliberately duplicated under their deprecated
 shipped SPA still reads it — live `var()` consumers in `phlix-ui`
 (PhotoView/PhotoAlbum pages and the admin WebhookLogs page): `--color-bg`
 (4 reads), `--color-surface` (11), `--color-text` (2), `--color-text-muted`
-(7), `--color-border` (13).
+(7), `--color-border` (13); read counts measured 2026-11-06 at `phlix-ui`
+origin/master `eb9e991c`.
 
 | Alias | Value | Modern twin |
 |-------|-------|-------------|
@@ -140,4 +141,4 @@ composer test
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License — see [LICENSE](LICENSE) file for details.
