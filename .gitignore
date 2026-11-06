@@ -3,7 +3,11 @@
 
 # Composer
 composer.phar
-composer.lock
+# NOTE: composer.lock is deliberately NOT ignored here — this repo commits it by
+# S440 law (see 2cf7ad9 and tests/SecurityAuditCheckTest.php's
+# testTheCommittedLockExists); a composer.lock ignore line is a silent trap —
+# inert while the lock is tracked, unable to re-add it without -f after any
+# removal — kept out on purpose, not an oversight.
 
 # IDE
 .idea/
