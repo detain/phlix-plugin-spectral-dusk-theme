@@ -15,9 +15,11 @@ use RuntimeException;
  *
  * `--text-subtle` carries form labels, placeholders and hints (phlix-ui
  * AuthField.vue renders labels at --text-2xs semibold with this token;
- * Input `::placeholder`, Combobox, CommandPalette and secondary metadata
- * consume it across ~247 sites) — body-text tier, so WCAG 1.4.3 demands
- * AA (>= 4.5:1) on every ground the theme actually paints. Both built-in
+ * Input `::placeholder`, Combobox and secondary metadata consume it —
+ * 260 live `var(--text-subtle` reads in its src/ excluding dev/,
+ * measured 2026-11-06 at origin/master `eb9e991c`) — body-text tier,
+ * so WCAG 1.4.3 demands AA (>= 4.5:1) on every ground the theme
+ * actually paints. Both built-in
  * baselines hold that bar for the same token (nocturne 5.36, midnight 5.05
  * on their own bg); the shipped #7a6b8a measured 4.19/4.05/3.86/3.59 on
  * bg/surface/surface-2/surface-3 (review theme-spectral-dusk__webux.md M1),
