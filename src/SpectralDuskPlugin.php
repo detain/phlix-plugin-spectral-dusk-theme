@@ -73,10 +73,12 @@ final class SpectralDuskPlugin implements LifecycleInterface, ThemeSourceInterfa
                     '--text-subtle'       => '#8d7ea4',
                     // KNOWN LIMITATION (owner-gated value; do not silently
                     // re-tune here — W-min157 ask-quote). The faintest ramp
-                    // rung reproduces the family tell at 1.99–2.06:1:
+                    // rung reproduces the family tell at 1.76–2.06:1:
                     // measured 2.06 on --bg, 1.99 on --surface, 1.90/1.76 on
                     // --surface-2/-3, 2.01 on the color-mix'd input ground
-                    // phlix-ui paints ::placeholder with (AuthField.vue),
+                    // phlix-ui paints --text-faint ::placeholder on (e.g.
+                    // SyncPlayModal.vue `.syncplay-modal__input` —
+                    // AuthField.vue's placeholder reads --text-subtle),
                     // plus the login/signup footnote rows — all far below
                     // the 4.5:1 body floor and under even WCAG 3:1. Root
                     // cause is estate-side (every built-in's faint sits

@@ -21,7 +21,7 @@ use RuntimeException;
  * so WCAG 1.4.3 demands AA (>= 4.5:1) on every ground the theme
  * actually paints. Both built-in
  * baselines hold that bar for the same token (nocturne 5.36, midnight 5.05
- * on their own bg); the shipped #7a6b8a measured 4.19/4.05/3.86/3.59 on
+ * on their own bg); the previously-shipped #7a6b8a measured 4.19/4.05/3.86/3.59 on
  * bg/surface/surface-2/surface-3 (review theme-spectral-dusk__webux.md M1),
  * dragging the secondary text system under AA whenever this theme is active.
  *
